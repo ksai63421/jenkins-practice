@@ -9,6 +9,7 @@ pipeline {
                   ls -ltr
                   pwd
                   echo "hello script"
+                  '''
             }
         }
         stage('Test') {
