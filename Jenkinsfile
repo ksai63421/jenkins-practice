@@ -44,5 +44,3 @@ pipeline {
             echo "I will run only when job is failure"
         }
     }
-
-}
