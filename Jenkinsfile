@@ -1,19 +1,17 @@
 pipeline {
     agent { node { label 'agent-1' } }
-    options {
-        timeout(time: 1, unit: 'HOURS') 
-    }
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
                 sh '''
                   ls -ltr
+                  pwd
                   echo "hello from github push webhook event"
-                  printenv
                   '''
             }
         }
+    }
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -25,9 +23,6 @@ pipeline {
                 echo 'this is failed'
             }
         }
-    
-        }
-    }
     post { 
         always { 
             echo 'I will always run wheather the job is success or not'
@@ -39,3 +34,4 @@ pipeline {
             echo "I will run only when job is failure"
         }
     }
+}
