@@ -3,9 +3,6 @@ pipeline {
     options {
         timeout(time: 1, unit: 'HOURS') 
     }
-    environment { 
-        USER = 'saikrishna'
-    }
     stages {
         stage('Build') {
             steps {
@@ -28,9 +25,7 @@ pipeline {
                 echo 'this is failed'
             }
         }
-            steps {
-                sh 'printenv'
-            }
+    
         }
     }
     post { 
