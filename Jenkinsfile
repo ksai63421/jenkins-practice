@@ -1,17 +1,12 @@
 pipeline {
     agent { node { label 'agent-1' } }
+
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh '''
-                  ls -ltr
-                  pwd
-                  echo "hello from github push webhook event"
-                  '''
             }
         }
-    }
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -20,18 +15,19 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                echo 'this is failed'
             }
         }
-    post { 
+    }
+}
+  post { 
         always { 
-            echo 'I will always run wheather the job is success or not'
+            echo 'I will always run whether job is success or not'
         }
         success{
-            echo "i will run only when job is success"
+            echo 'I will run only when job is success'
         }
         failure{
-            echo "I will run only when job is failure"
+            echo 'I will run when failure'
         }
     }
 }
