@@ -63,7 +63,7 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
-        stage('Example') {
+        stage('input') {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
