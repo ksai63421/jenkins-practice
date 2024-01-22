@@ -4,7 +4,7 @@ pipeline {
         timeout(time: 1, unit: 'HOURS') 
     }
     environment { 
-        USER = 'SAIKRISHNA'
+        USER = 'DEVOPS'
     }
 
     stages {
