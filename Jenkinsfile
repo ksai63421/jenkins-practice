@@ -72,5 +72,5 @@ pipeline {
             echo'I will run when job is failure'
         }
     }
-}
+
   
