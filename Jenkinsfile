@@ -26,20 +26,6 @@ pipeline {
                 '''
             }
         }
-            stage('Params') {
-            steps {
-                echo "Hello ${params.PERSON}"
-
-                echo "Biography: ${params.BIOGRAPHY}"
-
-                echo "Toggle: ${params.TOGGLE}"
-
-                echo "Choice: ${params.CHOICE}"
-
-                echo "Password: ${params.PASSWORD}"
-            }
-        }
-
     }
         stage('Test') {
             steps {
@@ -60,7 +46,21 @@ pipeline {
                 sh 'printenv'
             }
         }
-    }
+        stage('Params') {
+            steps {
+                echo "Hello ${params.PERSON}"
+
+                echo "Biography: ${params.BIOGRAPHY}"
+
+                echo "Toggle: ${params.TOGGLE}"
+
+                echo "Choice: ${params.CHOICE}"
+
+                echo "Password: ${params.PASSWORD}"
+            }
+        }
+
+    
      post { 
         always { 
             echo 'I will always run whether job is success or not'
@@ -73,4 +73,4 @@ pipeline {
         }
     }
 
-  
+  }
