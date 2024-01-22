@@ -25,7 +25,7 @@ pipeline {
                 printenv
                 '''
             }
-
+        }
             stage('Params') {
             steps {
                 echo "Hello ${params.PERSON}"
@@ -40,7 +40,7 @@ pipeline {
             }
         }
 
-        }
+    }
         stage('Test') {
             steps {
                 echo 'Testing..'
