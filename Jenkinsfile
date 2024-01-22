@@ -13,8 +13,7 @@ pipeline {
        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-
-      stages {
+    stages {
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -26,7 +25,7 @@ pipeline {
                 '''
             }
         }
-    }
+    
         stage('Test') {
             steps {
                 echo 'Testing..'
@@ -46,6 +45,7 @@ pipeline {
                 sh 'printenv'
             }
         }
+    
         stage('Params') {
             steps {
                 echo "Hello ${params.PERSON}"
@@ -59,6 +59,7 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
+    }
 
     
      post { 
