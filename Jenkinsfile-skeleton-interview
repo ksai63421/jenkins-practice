@@ -1,0 +1,22 @@
+pipeline{
+      agent any
+      options {
+        timeout(time: 1, unit: 'HOURS')
+      }
+      parameters{
+          choice(name: 'ENV', choices: ['DEV', 'QA', 'PROD'], description: 'Select Environment')
+      }
+      stages{
+        stage('build'){
+
+            steps{
+
+            }
+        }
+
+    }
+    post{
+        
+    }
+
+ }
